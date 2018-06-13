@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="https://use.fontawesome.com/64a67ceaba.js"></script>
+	<title>Library</title>
+	<style>
+		html,
+		body {
+			z-index: 2;
+			background: white;
+			margin: 0px;
+			height: 100%;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="main">
+		<div class="headBar">
+			<div class="content">
+				<h1>Library </h1>
+				<button id="addButton">
+
+					<i class="fa fa-plus" title="Add a book." aria-hidden="true"></i> Add
+				</button>
+			</div>
+		</div>
+		<div class="root">
+
+		</div>
+	</div>
+	<div class="formOverlay">
+		<div class="innerFormDiv">
+			<h4>Add a book</h4>
+			<form autocomplete="off" id="addBookForm" name="bookAddingForm">
+				<label for="title">
+					<input data-type="char" type="text" id="title" class="charInput" required>
+					<p class="formP">Title</p>
+
+				</label>
+				<label for="author">
+
+					<input data-type="char" type="text" id="author" class="charInput" required>
+					<p class="formP">Author</p>
+				</label>
+				<label for="pages">
+					<input data-type="char" type="number" id="pages" class="charInput" min="0" required>
+					<p class="formP">Pages</p>
+				</label>
+				<label for="read">
+
+					<input type="checkbox" id="read">
+					<p>Read it?</p>
+				</label>
+
+				<button class="butt" id="formAdd" type="submit">
+					<i class="fa fa-plus" aria-hidden="true" title="Add a book."></i>
+					Add</button>
+				<button class="butt" id="formCancel" type="button">
+					<i class="fa fa-times" aria-hidden="true" title="Cancel"></i> Cancel</button>
+			</form>
+
+			<span id="popUpAlert">
+				<p id="popUpAlertText">Popup text</p>
+				<i class="fa fa-times" aria-hidden="true"></i>
+			</span>
+		</div>
+	</div>
+</body>
+
+</html>
