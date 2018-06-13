@@ -36,7 +36,7 @@ button {
       top: 78%;
       transform: $centerTransform;
       left: 50%;
-      padding: 2px 6px;
+      padding: 4px 8px;
       margin: 0px;
       border: none;
       float: right;
@@ -68,7 +68,7 @@ button {
   width: 70%;
   z-index: 3;
   border-radius: 2px;
-  background: rgba(0, 0, 0, 0.12);
+  background: rgba(0, 0, 0, 0.0);
 }
 
 .formOverlay {
@@ -87,7 +87,8 @@ button {
       color: $primary-dark;
       margin: 16px auto;
       padding: 0px;
-      font-family: $titleFont;
+      font-family: $otherFont;
+      font-weight: 400;
       text-align: center;
     }
     border-radius: 2px;
@@ -105,7 +106,8 @@ button {
       p {
         color: $text-formButtons;
         font-weight: 100;
-        font-family: $titleFont;
+        font-family: $otherFont;
+        font-weight: 300;
         font-size: 1rem;
         margin: 4px;
         padding: 0px 0px 0px 0px;
@@ -152,7 +154,7 @@ input:focus {
   border: 0px;
   width: 33%;
   min-width: 75px;
-  box-shadow: $bs-light;
+  background: $primary-light;
   transition: $transitionBZ;
   i {
     color: $text-formButtons;
@@ -160,7 +162,7 @@ input:focus {
 }
 
 .butt:hover {
-  box-shadow: $bs-medium;
+  box-shadow: $bs-light;
   transform: translateY(-2px);
 }
 
@@ -170,8 +172,8 @@ input:focus {
 }
 
 #formCancel:hover {
-  outline-color: rgb(252, 150, 150);
-  background: rgb(255, 204, 204);
+  outline-color: $danger;
+  background: $danger-light;
 }
 
 .formP {
@@ -188,6 +190,54 @@ input[data-type="char"]:valid~p {
   top: -55px;
   left: -5px;
 }
+// custom checkbox
+input[type='checkbox']{
+  cursor: pointer;
+  opacity: 0;
+}
+#readP {
+  position: absolute;
+  top: 57%;
+  left: 55%;
+}
+.checkmark {
+  cursor: pointer;
+  position: absolute;
+  top: 59%;
+  left: 51.25%;
+  width: 1rem;
+  height: 1rem;
+  background-color: rgba(86, 96, 114, 0.5);;
+  border-radius: 2px;
+  transition: $transitionBZ;
+}
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+input[type='checkbox']:checked ~ .checkmark:after{
+  display:block;
+}
+input[type='checkbox']:checked ~ .checkmark{
+  background: $primary;
+}
+.checkmark:hover{
+  background: rgba(90, 140, 206,0.5);
+}
+.checkmark:after {
+  top: 1.7px;
+  left: 4.5px;
+  width: 0.25rem;
+  height: 0.5rem;
+  transform: rotate(45deg);
+  border: solid $primary-light;
+  border-width: 0 2px 2px 0;
+}
+.checboxContainer:hover input ~ .checkmark{
+  background: $primary-dark;
+}
+//custom checkbox above
 
 #popUpAlert {
   font-family: Roboto, sans-serif;
@@ -199,7 +249,7 @@ input[data-type="char"]:valid~p {
   left: 50%;
   transform: $centerTransform;
   color: $primary-dark;
-  background-color: rgba(212, 89, 89, 0.925);
+  background-color: $danger-dark;
   border-radius: 10px;
   border: none;
   padding: 8px;
@@ -218,4 +268,34 @@ input[data-type="char"]:valid~p {
   cursor: pointer;
   color: $primary-light;
   background-color: $primary;
+}
+
+footer {
+  margin:0px;
+  background-color: $primary-dark;
+  position: absolute;
+  z-index: 4;
+  width: 100%;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  color: $primary;
+  transition: $transitionBZ;
+  box-shadow: $bs-mediumRev;
+  p {
+    font-size: 0.8rem;
+    text-align: center;
+    font-family: $otherFont;
+    font-weight: 300;
+    width: 100%;
+    left: 50%;
+  }
+  #me {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
+
+footer:hover {
+  color: $primary-light;
 }
