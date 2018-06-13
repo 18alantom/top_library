@@ -116,6 +116,7 @@ class Shelf extends React.Component {
     this.addButtonFormHandler = this.addButtonFormHandler.bind(this);
     this.removeBook = this.removeBook.bind(this);
     this.isRead = this.isRead.bind(this);
+    this.renderBook = this.renderBook.bind(this);
   }
 
   componentWillMount() {
@@ -178,6 +179,7 @@ class Shelf extends React.Component {
   }
 
   renderBook() {
+    // console.log(this.state.book);
     let shelf = this.state.book.slice();
     shelf = shelf.map((e, i) => {
       const {
