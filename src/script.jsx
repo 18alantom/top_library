@@ -3,8 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/style.scss';
 import './styles/BookHolder.scss';
-import './styles/Book.scss';
-// TODO: Add popup to warn about non entered text fields; and complete the app.
+
 const addButton = document.querySelector('#addButton');
 const formOverlay = document.querySelector('.formOverlay');
 const addButtonForm = document.querySelector('#formAdd');
@@ -212,7 +211,29 @@ class Shelf extends React.Component {
 
 function BookHolder(props) {
   const books = props.renderBook();
-  return <div className="bookHolderDiv">{books}</div>;
+  return (
+    <div className="bookHolderDivOuter">
+      <div className="bookHolderDiv" id="bookHolderDivHead">
+        <h4 id="indexNoHead" className="indexRow">
+          #
+        </h4>
+        <h4 id="titleHead" className="titleColumn">
+          Title
+        </h4>
+        <h4 id="authorHead" className="authorColumn">
+          Author
+        </h4>
+        <h4 id="pagesHead" className="pagesColumn">
+          Pages
+        </h4>
+        <h4 id="readItHead" className="readItColumn">
+          Read it?
+        </h4>
+        <p id="deleteHead" className="deleteColumn" />
+      </div>
+      {books}
+    </div>
+  );
 }
 
 function Book(props) {
@@ -226,13 +247,16 @@ function Book(props) {
     isRead(index - 1);
   }
   return (
-    <div>
-      <h3>{title}</h3>
-      <p>by</p>
-      <h4>{author}</h4>
-      <h5>Pages: {pages}</h5>
-      <button onClick={changeRead}>{`Read: ${read ? ' yup ' : ' nope '}`}</button>
-      <button onClick={remove}>
+    <div className="bookHolderDiv bookDiv" >
+      <p className="indexColumn">{index}</p>
+      <p className="titleColumn">{title}</p>
+
+      <p className="authorColumn">{author}</p>
+      <p className="pagesColumn">{pages}</p>
+      <button className="readItColumn" id="readItButton" onClick={changeRead}>
+        {read ? 'Yup! ' : 'Nope '}
+      </button>
+      <button className="deleteColumn" id="deleteButton" onClick={remove}>
         <i className="fa fa-trash-o" aria-hidden="true" />
       </button>
     </div>
@@ -253,9 +277,3 @@ BookHolder.propTypes = {
   renderBook: PropTypes.func.isRequired,
 };
 ReactDOM.render(<Shelf />, document.querySelector('.root'));
-
-// <h1>{title}</h1>
-// <h2 onClick={changeRead}>{author + pages + read}</h2>
-// <button onClick={remove}>
-//   <i className="fa fa-trash-o" aria-hidden="true" title="Delete book." />
-// </button>

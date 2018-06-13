@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="https://fonts.googleapis.com/css?family=Lato|Roboto:300,400" rel="stylesheet">
 	<script src="https://use.fontawesome.com/64a67ceaba.js"></script>
 	<title>Library</title>
 	<style>
@@ -37,29 +38,32 @@
 		<div class="innerFormDiv">
 			<h4>Add a book</h4>
 			<form autocomplete="off" id="addBookForm" name="bookAddingForm">
+
 				<label for="title">
 					<input data-type="char" type="text" id="title" class="charInput" required>
 					<p class="formP">Title</p>
-
 				</label>
-				<label for="author">
 
+				<label for="author">
 					<input data-type="char" type="text" id="author" class="charInput" required>
 					<p class="formP">Author</p>
 				</label>
+
 				<label for="pages">
 					<input data-type="char" type="number" id="pages" class="charInput" min="0" required>
 					<p class="formP">Pages</p>
 				</label>
-				<label for="read">
 
+				<label for="read" class="checkboxContainer">
 					<input type="checkbox" id="read">
-					<p>Read it?</p>
+					<span class="checkmark"></span>
+					<p id="readP">Read it?</p>
 				</label>
 
 				<button class="butt" id="formAdd" type="submit">
 					<i class="fa fa-plus" aria-hidden="true" title="Add a book."></i>
 					Add</button>
+
 				<button class="butt" id="formCancel" type="button">
 					<i class="fa fa-times" aria-hidden="true" title="Cancel"></i> Cancel</button>
 			</form>
@@ -70,6 +74,11 @@
 			</span>
 		</div>
 	</div>
+	<footer>
+		<p>by
+			<span id="me">Al</span>
+		</p>
+	</footer>
 </body>
 
 </html>
