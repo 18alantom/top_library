@@ -5,4 +5,4 @@ A simple library app created for [The Odin Project Project's curriculum](https:/
 
 Unbuilt .jsx .html & .scss files in ./src
 
-Built and transpiled files (.js & .html) in ./build
+Built and transpiled files (.js & .html) in ./docs
