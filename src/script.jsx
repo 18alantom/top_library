@@ -98,16 +98,22 @@ class Shelf extends React.Component {
     this.state = {
       book: [
         {
-          title: 'Grab the Ghost',
-          author: "Flic m'Cock",
-          pages: 234,
+          title: 'Gödel, Escher, Bach',
+          author: 'Douglas R.Hofstadter',
+          pages: 777,
+          read: true,
+        },
+        {
+          title: 'Being Happy',
+          author: 'Triste Solemn',
+          pages: 432,
           read: false,
         },
         {
-          title: 'Bootleg Brandy',
-          author: 'Max Murgh',
-          pages: 432,
-          read: true,
+          title: 'Superintelligence',
+          author: 'Nick Bostrom',
+          pages: 415,
+          read: false,
         },
       ],
     };
