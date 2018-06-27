@@ -293,9 +293,16 @@ footer {
   #me {
     font-size: 1rem;
     font-weight: 400;
+    a{
+      text-decoration: none; 
+      transition-duration: 300ms;
+    }
+    a:visited {
+      text-decoration: none;
+      color:$primary;
+    }
+    a:visited:hover{
+      color:$primary-light;
+    }
   }
-}
-
-footer:hover {
-  color: $primary-light;
 }
